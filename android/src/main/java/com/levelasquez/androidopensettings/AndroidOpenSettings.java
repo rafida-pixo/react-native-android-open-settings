@@ -215,6 +215,16 @@ public class AndroidOpenSettings extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
+    public void hardwareKeyboardSettings() {
+        Intent intent = new Intent(Settings.ACTION_HARD_KEYBOARD_SETTINGS);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+        if (intent.resolveActivity(reactContext.getPackageManager()) != null) {
+            reactContext.startActivity(intent);
+        }
+    }
+
+    @ReactMethod
     public void appNotificationSettings() {
         Intent intent = new Intent("android.settings.APP_NOTIFICATION_SETTINGS"); // Settings.ACTION_APP_NOTIFICATION_SETTINGS
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
