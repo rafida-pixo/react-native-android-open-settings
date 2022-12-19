@@ -13,6 +13,7 @@ declare module "react-native-android-open-settings" {
   const inputMethodSettings: () => void;
   const displaySettings: () => void;
   const securitySettings: () => void;
+  const hardwareKeyboardSettings: () => void;
   const internalStorageSettings: () => void;
   const memoryCardSettings: () => void;
   const accessibilitySettings: () => void;
